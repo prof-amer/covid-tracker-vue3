@@ -14,13 +14,31 @@ import { defineStore } from 'pinia'
 // Using Options API for now because we don't need to include the return statement.
 // This is probaly the only place where I use Options instead of Composition.
 // It is however advisable not to mix the Options and Compositions API.
+
+interface CovidData {
+    ID: string,
+    Country: string,
+    CountryCode: string,
+    Slug: string,
+    NewConfirmed: number,
+    TotalConfirmed: number,
+    NewDeaths: number,
+    TotalDeaths: number,
+    NewRecovered: number,
+    TotalRecovered: number,
+    Date: string,
+    Premium: object
+}
+
+let stats: CovidData
+
 export const useDataStore = defineStore('data', {
     state: () => (
         {
             loading: true,
             title: 'Global',
             dataDate: '',
-            stats: {},
+            stats,
             countries: [],
             selectedCountry: ''
         }
