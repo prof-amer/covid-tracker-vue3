@@ -5,7 +5,7 @@
         </h2>
         <div class="text-2xl mt-4 mb-10">
             <span>Last Updated:<br>
-            </span>{{ parsedDate }}
+            </span>{{ parsedDate }}  (Local Time)
         </div>
     </div>
 </template>
